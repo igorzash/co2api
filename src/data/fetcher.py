@@ -1,8 +1,8 @@
 import aiosqlite
 import datetime
 
-from model.data_type import DataType
-from model.region import Region
+from src.model.data_type import DataType
+from src.model.region import Region
 
 
 SQLITE_DB_PATH = './co2.db'

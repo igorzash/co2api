@@ -3,7 +3,7 @@ import dataclasses
 
 import falcon
 
-from data.fetcher import DataFetcher
+from src.data.fetcher import DataFetcher
 
 
 class SummaryResource:
