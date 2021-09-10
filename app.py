@@ -9,7 +9,7 @@ from resources.distribution.data_types import DataTypesResource
 from resources.distribution.summary import SummaryResource
 
 
-app = falcon.asgi.App()
+app = falcon.asgi.App(cors_enable=True)
 
 
 app.add_route('/api/v1/distribution/regions', RegionsResource())
