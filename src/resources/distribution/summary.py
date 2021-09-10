@@ -33,14 +33,13 @@ class SummaryResource:
             invalid_query_params()
             return
 
-        try:
-            results = [result async for result in DataFetcher.get_summary_results(year=year,
-                data_type_id=data_type_id, region_id=region_id)]
+        results = [result async for result in DataFetcher.get_summary_results(year=year,
+            data_type_id=data_type_id, region_id=region_id)]
+        
+        results.sort(key=lambda result: result['dateStart'])
 
-            resp.text = json.dumps({
-                'dataType': dataclasses.asdict(data_type),
-                'region': dataclasses.asdict(region),
-                'results': results
-            })
-        except Exception as e:
-            print(e)
+        resp.text = json.dumps({
+            'dataType': dataclasses.asdict(data_type),
+            'region': dataclasses.asdict(region),
+            'results': results
+        })

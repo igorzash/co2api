@@ -30,6 +30,8 @@ def main():
 
     con.commit()
     cur = con.cursor()
+
+    rows.sort(key=lambda row: ''.join(row)) 
     
     for row in rows:
         year, month, region_name, co2_output, trees_num = row
