@@ -10,6 +10,7 @@ COPY --from=setup /usr/app/co2.db .
 COPY data data
 COPY model model
 COPY resources resources
+COPY middleware middleware
 COPY __init__.py .
 COPY app.py .
 COPY requirements.txt .
